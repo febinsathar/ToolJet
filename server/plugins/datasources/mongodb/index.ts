@@ -22,6 +22,23 @@ export default class MongodbService implements QueryService {
         case 'insert_many':
           result = await db.collection(queryOptions.collection).insertMany(JSON.parse(queryOptions.documents));
           break;
+        case 'find_one':
+          result = await db.collection(queryOptions.collection).findOne(JSON.parse(queryOptions['query']));
+          break;
+        case 'find':
+          let resultQueryBuilder = db.collection(queryOptions.collection)
+          if ("query" in queryOptions && queryOptions['query'])
+            resultQueryBuilder = resultQueryBuilder.find(JSON.parse(queryOptions['query']))
+          else
+            resultQueryBuilder = resultQueryBuilder.find({})
+          if ("sort" in queryOptions && queryOptions['sort'])
+            resultQueryBuilder = resultQueryBuilder.sort(JSON.parse(queryOptions['sort']))
+          if ("limit" in queryOptions && queryOptions['limit'])
+            resultQueryBuilder = resultQueryBuilder.limit(JSON.parse(queryOptions['limit']))
+          if ("skip" in queryOptions && queryOptions['skip'])
+            resultQueryBuilder = resultQueryBuilder.sort(JSON.parse(queryOptions['skip']))
+          result = await resultQueryBuilder.toArray();
+          break;
       }
     } catch (err) {
       console.log(err);
