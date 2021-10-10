@@ -7,12 +7,6 @@ const rootWebpackConfig = require('../../webpack.config');
 /** @type import('webpack').Configuration */
 module.exports = {
   ...rootWebpackConfig,
-  resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.json', '.js', '.jsx'],
-    alias: {
-      '@': path.resolve(__dirname, 'src/'),
-    },
-  },
   entry: {
     main: require.resolve('./src/client-main.tsx'),
   },

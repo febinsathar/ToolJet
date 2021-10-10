@@ -11,8 +11,7 @@
     "test": "yarn test:only",
     "test:only": "mocha \"packages/*/dist/test/**/*.spec.js\"",
     "start": "yarn start:client",
-    "start:client": "yarn workspace @sample/app start",
-    "start:server": "yarn workspace @sample/server start",
+    "start:client": "yarn workspace @tooljet/builder start",
     "prettify": "npx prettier . --write"
   },
   "devDependencies": {

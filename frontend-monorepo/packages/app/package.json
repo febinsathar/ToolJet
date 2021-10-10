@@ -1,5 +1,5 @@
 {
-  "name": "@sample/app",
+  "name": "@tooljet/builder",
   "version": "1.0.0",
   "main": "dist/index.js",
   "scripts": {
@@ -15,7 +15,7 @@
     "react-dom": ">=17"
   },
   "dependencies": {
-    "@sample/components": "^1.0.0",
+    "@tooljet/components": "^1.0.0",
     "sanitize.css": "^13.0.0"
   },
   "files": [

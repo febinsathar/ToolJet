@@ -1,11 +1,22 @@
 // @ts-check
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require('path');
+
+console.log("===========>>>>" + require.resolve('./tsconfig.json'))
+
+console.log("======2=====>>>>" + path.resolve(__dirname, 'packages/app/src/'))
 
 /** @type import('webpack').Configuration */
 module.exports = {
   devtool: 'source-map',
   context: __dirname,
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.json', '.js', '.jsx'],
+    alias: {
+      '@': path.resolve(__dirname, 'packages/app/src/'),
+    },
+  },
   module: {
     rules: [
       {

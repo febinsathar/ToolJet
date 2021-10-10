@@ -2383,11 +2383,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sample/app@^1.0.0, @sample/app@workspace:packages/app":
+"@tooljet/builder@workspace:packages/app":
   version: 0.0.0-use.local
-  resolution: "@sample/app@workspace:packages/app"
+  resolution: "@tooljet/builder@workspace:packages/app"
   dependencies:
-    "@sample/components": ^1.0.0
+    "@tooljet/components": ^1.0.0
     sanitize.css: ^13.0.0
   peerDependencies:
     react: ">=17"
@@ -2395,24 +2395,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@sample/components@^1.0.0, @sample/components@workspace:packages/components":
+"@tooljet/components@^1.0.0, @tooljet/components@workspace:packages/components":
   version: 0.0.0-use.local
-  resolution: "@sample/components@workspace:packages/components"
+  resolution: "@tooljet/components@workspace:packages/components"
   peerDependencies:
     react: ">=17"
-  languageName: unknown
-  linkType: soft
-
-"@sample/server@workspace:packages/server":
-  version: 0.0.0-use.local
-  resolution: "@sample/server@workspace:packages/server"
-  dependencies:
-    "@sample/app": ^1.0.0
-    compression: ^1.7.4
-    express: ^4.17.1
-  peerDependencies:
-    react: ">=17"
-    react-dom: ">=17"
   languageName: unknown
   linkType: soft
 

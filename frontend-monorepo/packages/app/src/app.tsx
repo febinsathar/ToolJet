@@ -1,6 +1,8 @@
 import type React from 'react';
-import { Main } from '@sample/components';
-import { Test } from './test';
+import { Main } from '@tooljet/components';
+import { Tview } from './tssample/index'
+
+// import { Tview } from '@/jssample/index'
 
 export interface AppProps {
   text: string;
@@ -9,8 +11,8 @@ export interface AppProps {
 export const App: React.VFC<AppProps> = ({ text }) => {
   return (
     <div>
-      <Test text={"yoooo"} />
-      <Main text={text} />
+      <Tview text={"from app"} />
+      <Main text={"from library"} />
     </div>
   )
 };
